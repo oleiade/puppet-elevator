@@ -33,4 +33,13 @@ class elevator::config {
         group   => elevator,
         require => Class["elevator::install"],
     }
+
+    file { $elevator::params::init_script:
+        ensure  => present,
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => 'puppet:///modules/elevator/etc/init.d/elevator-server',
+        require => Class["elevator::install"],
+    }
 }
