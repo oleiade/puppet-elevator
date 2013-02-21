@@ -1,0 +1,8 @@
+name    'puppet-elevator'
+version '0.5'
+source ''
+author 'oleiade'
+license 'MIT'
+summary ''
+description 'Module for configuring elevator via puppet'
+project_page 'https://github.com/oleiade/puppet-elevator'
