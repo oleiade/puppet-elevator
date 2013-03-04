@@ -1,11 +1,10 @@
-class elevator::params(
-    $daemonize = "no",
-    $port = "4141",
-    $bind = "127.0.0.1",
-    $db_storage_path = "/var/lib/elevator",
-    $log_dir = "/var/log/elevator",
-    $majordome_interval = "15"
-) {
+class elevator::params {
+    $port = "$elevator::port"
+    $bind = "$elevator::bind"
+    $db_storage_path = "$elevator::db_storage_path"
+    $log_dir = "$elevator::log_dir"
+    $majordome_interval = "$elevator::majordome_interval"
+
     $db_store_file = "${db_storage_path}/store.json"
 
     $activity_log_file = "${log_dir}/elevator.log"

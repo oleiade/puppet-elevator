@@ -1,7 +1,7 @@
 [global]
 # By default Elevator does not run as a daemon. Use 'yes' if you need it.
 # Note that Elevator will write a pid file in /var/run/elevator.pid when daemonized.
-daemonize = <%=  scope.lookupvar('elevator::params::daemonize') %>
+daemonize = no
 
 # When running daemonized, Elevator writes a pid file in /var/run/elevator.pid by
 # default. You can specify a custom pid file location here.

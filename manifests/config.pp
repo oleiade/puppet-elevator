@@ -20,14 +20,14 @@ class elevator::config {
         require => [File[$elevator::params::config_dir], Class["elevator::install"]],
     }
 
-    file { $elevator::params::db_storage_path:
+    file { $elevator::db_storage_path:
         ensure  => directory,
         owner   => elevator,
         group   => elevator,
         require => Class["elevator::install"],
     }
 
-    file { $elevator::params::log_dir:
+    file { $elevator::log_dir:
         ensure  => directory,
         owner   => elevator,
         group   => elevator,
