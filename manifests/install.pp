@@ -4,7 +4,8 @@ class elevator::install {
         release     => "oneiric",
         repos       => "main",
         key         => "92EDE36B",
-        key_server   => "pgp.mit.edu",
+        key_server  => "pgp.mit.edu",
+        include_src => false,
     } ->
     package { "libzmq3": ensure => "installed" } ->
     package { "libzmq3-dev": ensure => "installed", require => Package["libzmq3"] } ->
