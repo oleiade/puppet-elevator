@@ -16,11 +16,11 @@ class elevator::config {
         ensure  => present,
         owner   => elevator,
         group   => elevator,
-        source  => 'puppet:///modules/elevator/etc/elevator/elevator.conf',
+        content     => template("${module_name}/elevator.erb"),
         require => [File[$elevator::params::config_dir], Class["elevator::install"]],
     }
 
-    file { $elevator::params::data_dir:
+    file { $elevator::params::db_storage_path:
         ensure  => directory,
         owner   => elevator,
         group   => elevator,

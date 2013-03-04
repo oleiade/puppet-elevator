@@ -1,36 +1,36 @@
 [global]
 # By default Elevator does not run as a daemon. Use 'yes' if you need it.
 # Note that Elevator will write a pid file in /var/run/elevator.pid when daemonized.
-daemonize = no
+daemonize = <%=  scope.lookupvar('elevator::params::daemonize') %>
 
 # When running daemonized, Elevator writes a pid file in /var/run/elevator.pid by
 # default. You can specify a custom pid file location here.
 pidfile = /var/run/elevator.pid
 
 # Where databases files should be store on the filesystem.
-databases_storage_path = /var/lib/elevator
+databases_storage_path = <%=  scope.lookupvar('elevator::params::db_storage_path') %>
 
 # Where should the file describing the databases store be
 # put on file system
-database_store = /var/lib/elevator/store.json
+database_store = <%=  scope.lookupvar('elevator::params::db_store_file') %>
 
 #Default database
 default_db = default
 
 # Accept connections on the specified port, default is 4141.
 # If port 0 is specified Elevator will not listen on a TCP socket.
-port = 4141
+port = <%=  scope.lookupvar('elevator::params::port') %>
 
 # If you want you can bind a single interface, if the bind option is not
 # specified all the interfaces will listen for incoming connections.
 #
-bind = 127.0.0.1
+bind = <%=  scope.lookupvar('elevator::params::bind') %>
 
 # Path to file were server activity should be logged
-activity_log = /var/log/elevator/elevator.log
+activity_log = <%=  scope.lookupvar('elevator::params::activity_log_file') %>
 
 # Path to file were server warnings, errors, exceptions should be logged
-errors_log = /var/log/elevator/elevator_errors.log
+errors_log = <%=  scope.lookupvar('elevator::params::errors_log_file') %>
 
 # Specify the path for the unix socket that will be used to listen for
 # incoming connections when Elevator is set to use an ipc socket.
@@ -43,4 +43,4 @@ unixsocket = /tmp/elevator.sock
 # match the condition.
 # Value is in minutes and should be positive.
 # Majordom can be deactivated with the 0 value.
-majordome_interval = 15
+majordome_interval = <%=  scope.lookupvar('elevator::params::majordome_interval') %>
