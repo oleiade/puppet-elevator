@@ -1,4 +1,5 @@
 class elevator::params {
+    $transport = "$elevator::transport"
     $port = "$elevator::port"
     $bind = "$elevator::bind"
     $db_storage_path = "$elevator::db_storage_path"

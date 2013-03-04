@@ -1,4 +1,5 @@
 class elevator(
+    $transport = "tcp",
     $port = "4141",
     $bind = "127.0.0.1",
     $db_storage_path = "/var/lib/elevator",

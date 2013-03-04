@@ -30,6 +30,7 @@ Using Parameterized Classes
 .. code-block:: puppet
 
     class { 'elevator':
+            transport           => "tcp",
             port                => "4141",
             bind                => "0.0.0.0",
             db_storage_path     => "/var/lib/elevator",
@@ -41,6 +42,9 @@ Parameters
 ----------
 
 The following lists all the class parameters the elevator class accepts.
+
+* **transport**
+    The transport layer for Elevator to use. `tcp` will be able to talk to remote clients, but each transactions costs. `ipc` will listen for clients requests on an unix socket: very, very fast, but local only.
 
 * **port**
     The port to bind elevator server on to.
