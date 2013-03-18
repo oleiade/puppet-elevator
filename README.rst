@@ -8,6 +8,17 @@ Puppet module for `Elevator <http://github.com/oleiade/Elevator>`_ install and c
 Installation
 ============
 
+Dependencies
+------------
+
+``puppet-elevator`` depends on ``pupetlabs/apt`` module, so first install step should be to install it if isn't already done:
+
+.. code-block:: bash
+
+    puppet module install puppetlabs/apt
+
+Then you're able to install the elevator module
+
 .. code-block:: bash
 
     cd /etc/puppet/modules/
