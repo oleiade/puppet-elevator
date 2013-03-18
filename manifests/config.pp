@@ -16,7 +16,7 @@ class elevator::config {
         ensure  => present,
         owner   => elevator,
         group   => elevator,
-        content     => template("${module_name}/elevator.erb"),
+        content => template("${module_name}/elevator.erb"),
         require => [File[$elevator::params::config_dir], Class["elevator::install"]],
     }
 
@@ -39,7 +39,7 @@ class elevator::config {
         owner   => root,
         group   => root,
         mode    => 0755,
-        source  => 'puppet:///modules/elevator/etc/init.d/elevator-server',
+        content => template("${module_name}/elevator-server.erb"),
         require => Class["elevator::install"],
     }
 }
