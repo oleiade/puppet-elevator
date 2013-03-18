@@ -1,4 +1,5 @@
 class elevator::install {
+    # Elevator package dependencies
     apt::source {"oleiade_repo":
         location    => "http://deb.oleiade.com/debian/",
         release     => "oneiric",
@@ -13,7 +14,7 @@ class elevator::install {
     package { "libleveldb-dev": ensure => "installed", require => Package["libleveldb1"]}
 
     package {"Elevator":
-        ensure      => present,
+        ensure      => latest,
         provider    => pip,
     }
 }
